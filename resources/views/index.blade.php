@@ -13,7 +13,8 @@
     <section class="section first-section">
         <div class="container-fluid">
             <div class="masonry-blog clearfix">
-                @foreach ($featureBlogs as $index => $blog)
+
+                @forelse ($featureBlogs as $index => $blog)
                     @if ($index == 0)
                         <!-- Left-side featured article -->
                         <div class="left-side">
@@ -125,7 +126,9 @@
                             </div>
                         </div>
                     @endif
-                @endforeach
+                    @empty
+                        <p class="text-center">No blogs found.</p>
+                @endforelse
             </div>
         </div>
     </section>
