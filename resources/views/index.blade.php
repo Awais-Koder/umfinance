@@ -179,8 +179,10 @@
 
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div class="section-title">
+                        @if(!empty($blog))
                         <h3 class="color-pink"><a href="{{route('category.show' , Crypt::encrypt($blog->category_id))}}"
                                 title="">{{ $blog->category->name }}</a></h3>
+                        @endif
                     </div>
                     <div class="row">
                         @foreach ($blogs->skip(1)->take(2) as $blog)
